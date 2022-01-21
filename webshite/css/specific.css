@@ -1,0 +1,60 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 40px;
+    text-align: center;
+    justify-content: space-evenly;
+    display: inline-block;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #730909;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.producten {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 20px auto;
+    color: rgb(22, 22, 66);
+    font-size: 1.1em;
+    max-width: 1200px;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+
+}
+
+.flex-child:first-child {
+    margin-right: 20px;
+}
+
+.reserveren {
+    text-align: center;
+    justify-content: space-evenly;
+}
+
