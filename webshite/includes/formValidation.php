@@ -8,9 +8,8 @@ if ($price == "") {
     $errors['price'] = 'De prijs mag niet leeg zijn';
 }
 if ($description == "") {
-    $errors['desctription'] = 'De Beschrijving mag niet leeg zijn';
+    $errors['description'] = 'De Beschrijving mag niet leeg zijn';
 }
-if ($amount > 999) {
-    $errors['amount'] = 'de hoeveelheid van het product mag niet hoger zijn dan 999';
+if ($amount == "") {
+    $errors['amount'] = 'de hoevheid mag niet leeg zijn';
 }
-

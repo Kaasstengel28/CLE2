@@ -22,19 +22,21 @@ if (isset($_POST['submit'])) {
     require_once "includes/formValidationReserveren.php";
 
     //en hier slaat hij het op in de database
-    $query = "INSERT INTO reserveringen (accountName, dateOrdered, amountProduct, productId )
+    if (empty($errors)) {
+        $query = "INSERT INTO reserveringen (accountName, dateOrdered, amountProduct, productId )
                   VALUES ('$accountName', '$dateOrdered', '$amountProduct', '$productId' )";
-    $result = mysqli_query($db, $query)
-    or die('Error: ' . mysqli_error($db) . ' with query ' . $query);
+        $result = mysqli_query($db, $query)
+        or die('Error: ' . mysqli_error($db) . ' with query ' . $query);
 //al is alles gelukt stuurt hij je door naar de reservering gelukt pagina. als niet dan krijg je een error
-    if ($result) {
-        header('Location: reserveringGelukt.pog.php');
-        exit;
+        if ($result) {
+            header('Location: reserveringGelukt.pog.php');
+            exit;
 
-    } else {
-        $errors['db'] = 'er is iets fout gegaan: ' . mysqli_error($db);
+        } else {
+            $errors['db'] = 'er is iets fout gegaan: ' . mysqli_error($db);
+        }
+        mysqli_close($db);
     }
-    mysqli_close($db);
 }
 ?>
 <!DOCTYPE html>

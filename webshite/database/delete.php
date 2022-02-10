@@ -1,5 +1,5 @@
 <?php
-//connectie database
+//hier maakt hij connectie met database
 require_once 'database.php';
 /** @var mysqli $db */
 
@@ -13,7 +13,6 @@ $productId = mysqli_escape_string($db, $_GET['id']);
 
 //hier delete hij de rij uit de tabel producten waarbij het producten id matcht.
 $query = "DELETE FROM producten WHERE id = '$productId'";
-
 $result = mysqli_query($db, $query)
 or die('Error: ' . mysqli_error($db) . ' - Query: ' . $query);
 
